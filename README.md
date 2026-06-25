@@ -1,1 +1,995 @@
-# bendezpc.github.io
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="First-person account of the FIFA World Cup final: arrival, the stadium, minute-by-minute action, and the final ceremony." />
+  <title>Final Diary — FIFA World Cup | First-Person Account</title>
+  <style>
+
+    :root{
+      --bg:#07111f;
+      --card:#0d1b33;
+      --muted:#9fb3d1;
+      --text:#eaf1ff;
+      --brand:#18a3ff;
+      --brand2:#19d3a2;
+      --danger:#ff4d6d;
+      --shadow: 0 12px 40px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1000px 650px at 20% -10%, rgba(24,163,255,.35), transparent 60%),
+        radial-gradient(900px 600px at 85% 5%, rgba(25,211,162,.22), transparent 60%),
+        radial-gradient(700px 450px at 60% 110%, rgba(255,77,109,.14), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{color:inherit}
+    .container{max-width:1160px; margin:0 auto; padding:0 18px}
+
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,17,31,.55);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:900; letter-spacing:.2px;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(24,163,255,1), rgba(25,211,162,1));
+      box-shadow: 0 10px 25px rgba(24,163,255,.25);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: conic-gradient(from 190deg, rgba(255,255,255,.25), transparent 60%, rgba(255,255,255,.18));
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .nav-links{display:flex; gap:16px; align-items:center}
+    .nav-links a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:700;
+      font-size:14px;
+      padding:10px 12px;
+      border-radius:999px;
+      transition: .18s ease;
+    }
+    .nav-links a:hover{color:var(--text); background: rgba(255,255,255,.06)}
+
+    .search{
+      display:flex; align-items:center; gap:10px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:999px;
+      padding:8px 12px;
+      color:var(--muted);
+    }
+    .search input{
+      background:transparent; border:0; outline:none; color:var(--text);
+      width:180px;
+      font-weight:700;
+    }
+    .search input::placeholder{color: rgba(159,179,209,.75)}
+
+    .hero{
+      padding:26px 0 8px;
+    }
+    .hero-grid{display:grid; grid-template-columns: 1.3fr .7fr; gap:16px; align-items:stretch}
+    .banner{
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(120deg, rgba(24,163,255,.22), rgba(25,211,162,.14) 45%, rgba(255,77,109,.10)),
+        radial-gradient(900px 400px at 10% 10%, rgba(24,163,255,.45), transparent 55%),
+        radial-gradient(900px 420px at 85% 15%, rgba(25,211,162,.35), transparent 55%);
+      position:relative;
+      min-height:320px;
+    }
+    .banner .overlay{
+      position:absolute; inset:0;
+      background-image:
+        radial-gradient(circle at 20% 25%, rgba(255,255,255,.20), transparent 40%),
+        radial-gradient(circle at 70% 15%, rgba(255,255,255,.12), transparent 45%),
+        repeating-linear-gradient(125deg, rgba(255,255,255,.07), rgba(255,255,255,.07) 1px, transparent 1px, transparent 9px);
+      mix-blend-mode: overlay;
+      opacity:.55;
+      pointer-events:none;
+    }
+    .banner-inner{position:relative; padding:22px 22px 18px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      color:rgba(234,241,255,.92);
+      font-weight:900; letter-spacing:.5px;
+      text-transform:uppercase;
+      font-size:12px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      padding:10px 12px;
+      border-radius:999px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 4px rgba(24,163,255,.18);
+    }
+    .banner h1{margin:14px 0 10px; font-size:40px; line-height:1.05; letter-spacing:-.4px}
+    .meta{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+    .chip{
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      color:var(--muted);
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:13px;
+    }
+
+    .side{
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(13,27,51,.55);
+      padding:16px;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .side h3{margin:0; font-size:16px}
+    .side .score{
+      display:grid; grid-template-columns: 1fr auto 1fr; gap:10px; align-items:center;
+      padding:12px; border-radius:14px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .team{font-weight:900}
+    .vs{color:var(--muted); font-weight:900}
+    .timeline{display:flex; flex-direction:column; gap:10px}
+    .event{
+      display:grid; grid-template-columns: auto 1fr; gap:10px; align-items:flex-start;
+      color:var(--muted); font-weight:800; font-size:13px;
+    }
+    .badge{
+      width:34px; height:34px; border-radius:12px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--text);
+      font-weight:900;
+    }
+
+    main{padding:14px 0 60px}
+    .grid{
+      display:grid; grid-template-columns: 1fr 320px; gap:18px; align-items:start;
+    }
+
+    .content{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(13,27,51,.52);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .article{padding:20px 20px 8px}
+
+    .toc{
+      padding:14px 14px 10px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+    .toc h2{margin:0 0 10px; font-size:14px; color:var(--muted); text-transform:uppercase; letter-spacing:.6px}
+    .toc a{
+      display:block;
+      text-decoration:none;
+      padding:10px 10px;
+      border-radius:12px;
+      color:var(--text);
+      font-weight:800;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,0);
+    }
+    .toc a:hover{background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.10)}
+
+    h2{
+      margin:26px 0 10px;
+      font-size:22px;
+      letter-spacing:-.2px;
+    }
+    h3{margin:20px 0 8px; font-size:18px}
+    p{color:rgba(234,241,255,.93); margin:10px 0}
+
+    .figure{
+      margin:18px 0;
+      border-radius: 16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .figure .img{
+      height:190px;
+      background:
+        radial-gradient(400px 220px at 30% 25%, rgba(24,163,255,.35), transparent 60%),
+        radial-gradient(420px 260px at 80% 20%, rgba(25,211,162,.25), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+      position:relative;
+    }
+    .figure .img:after{
+      content:"Illustrative image (fictional) — arrival of fans and flags at the airport";
+      position:absolute; left:14px; bottom:14px; right:14px;
+      font-weight:900;
+      font-size:13px;
+      color:rgba(234,241,255,.92);
+      background: rgba(7,17,31,.40);
+      border:1px solid rgba(255,255,255,.10);
+      padding:10px 12px;
+      border-radius:14px;
+      backdrop-filter: blur(6px);
+    }
+    .figcap{padding:12px 14px; color:var(--muted); font-weight:700; font-size:13px}
+
+    .callout{
+      margin:18px 0;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      overflow:hidden;
+    }
+    .callout .head{
+      padding:12px 14px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      background: linear-gradient(90deg, rgba(24,163,255,.20), rgba(25,211,162,.12));
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .callout .title{
+      display:flex; align-items:center; gap:10px; font-weight:950; letter-spacing:.2px;
+    }
+    .spark{
+      width:28px; height:28px; border-radius:10px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .callout .body{padding:14px 14px 16px}
+    .quote{
+      font-style:italic;
+      color:rgba(234,241,255,.97);
+      border-left:3px solid rgba(24,163,255,.75);
+      padding-left:12px;
+      margin:0;
+    }
+    .quote strong{font-style:normal}
+
+    .stats{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin:18px 0;
+    }
+    .stat{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:12px;
+    }
+    .stat .n{font-size:24px; font-weight:1000}
+    .stat .l{color:var(--muted); font-weight:800; font-size:13px; margin-top:4px}
+
+    .timeline-match{
+      margin:16px 0;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    table{width:100%; border-collapse:collapse}
+    th,td{padding:12px 12px; border-bottom:1px solid rgba(255,255,255,.08)}
+    th{background: rgba(255,255,255,.04); text-align:left; color:var(--muted); font-size:13px; font-weight:900}
+    td{font-weight:800; color:rgba(234,241,255,.95); font-size:14px}
+    tr:last-child td{border-bottom:0}
+    .tag{
+      display:inline-block; padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color:var(--muted);
+      font-weight:950;
+      font-size:12px;
+    }
+    .tag.goal{color:#bfffe8; border-color: rgba(25,211,162,.35); background: rgba(25,211,162,.12)}
+    .tag.card{color:#ffd2db; border-color: rgba(255,77,109,.35); background: rgba(255,77,109,.10)}
+    .tag.save{color:#d7e6ff; border-color: rgba(24,163,255,.35); background: rgba(24,163,255,.12)}
+    .tag.pen{color:#fff1bf; border-color: rgba(255,193,7,.35); background: rgba(255,193,7,.10)}
+
+.sidebar{
+      position:sticky;
+      top:88px;
+      align-self:start;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      /* forces the sidebar to start at the top of the grid cell (so it "descends" with the page) */
+      height: fit-content;
+    }
+
+
+    @media (min-width: 981px){
+      /* makes the right sidebar follow the page content so it doesn't "float" too high */
+      .content{position:relative}
+      .sidebar{margin-top:16px}
+    }
+    .widget{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(13,27,51,.52);
+      box-shadow: var(--shadow);
+      padding:14px;
+    }
+    .widget h3{margin:0 0 10px; font-size:16px}
+    .widget .small{color:var(--muted); font-weight:800; font-size:13px}
+    .comment-box{display:flex; flex-direction:column; gap:10px}
+    textarea{
+      resize:none;
+      width:100%;
+      min-height:96px;
+      border-radius:14px;
+      padding:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      outline:none;
+      font-weight:700;
+    }
+    textarea::placeholder{color: rgba(159,179,209,.75)}
+    .btn{
+      cursor:pointer;
+      border:0;
+      border-radius:14px;
+      padding:12px 14px;
+      color:#04101f;
+      font-weight:1000;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 14px 35px rgba(24,163,255,.18);
+      transition:.18s ease;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn.secondary{
+      background: rgba(255,255,255,.08);
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:none;
+    }
+
+    .comments{display:flex; flex-direction:column; gap:12px; margin-top:14px}
+    .c{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding:12px;
+    }
+    .c .top{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .c .who{font-weight:1000}
+    .c .when{color:var(--muted); font-weight:800; font-size:12px}
+    .c .txt{color:rgba(234,241,255,.95); font-weight:750; margin-top:6px}
+
+    footer{
+      padding:24px 0 40px;
+      color:var(--muted);
+      font-weight:800;
+      text-align:center;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr;}
+      .grid{grid-template-columns: 1fr;}
+      .sidebar{position:relative; top:auto}
+      .banner h1{font-size:32px}
+      .search input{width:120px}
+      .stats{grid-template-columns: 1fr;}
+    }
+    /* subtle reveal */
+    .reveal{opacity:0; transform: translateY(8px); transition: .5s ease}
+    .reveal.in{opacity:1; transform:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="font-size:14px;color:rgba(234,241,255,.92)">LIVE STADIUM</div>
+          <div style="font-size:12px;color:var(--muted);font-weight:900">Final Diary • FIFA</div>
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="Navigation">
+        <a href="#chegada">Arrival</a>
+        <a href="#estadio">Stadium</a>
+        <a href="#jogo">Match</a>
+        <a href="#pos">Post-match</a>
+      </nav>
+
+      <div class="search" role="search">
+        <span aria-hidden="true">⌕</span>
+        <input id="q" type="search" placeholder="Search within the story..." />
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="banner" id="top">
+        <div class="overlay"></div>
+        <div class="banner-inner reveal" id="reveal-hero">
+          <div class="kicker"><span class="dot"></span> First-person account • Sports journalism + real experience</div>
+          <h1>World Cup Final: the day the planet went silent for a whistle</h1>
+          <div class="meta">
+            <div class="chip">📍 Host city: <strong>Lisbon (fictional)</strong></div>
+            <div class="chip">🏟️ Stadium: <strong>Atlantic Stadium</strong></div>
+            <div class="chip">🕒 Published: <strong>Today</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side reveal" id="reveal-side">
+        <h3>Quick recap</h3>
+        <div class="score" aria-label="Fictional final score">
+          <div class="team">Atlântica</div>
+          <div class="vs">VS</div>
+          <div class="team">Aurora</div>
+          <div style="grid-column:1/-1;display:flex;justify-content:space-between;margin-top:6px;color:var(--muted);font-weight:950;font-size:13px">
+            <span>90’ + 0</span>
+            <span>2–2 draw</span>
+          </div>
+          <div style="grid-column:1/-1;display:flex;justify-content:space-between;color:var(--muted);font-weight:950;font-size:13px">
+            <span>Extra time</span>
+            <span>0–0</span>
+          </div>
+          <div style="grid-column:1/-1;display:flex;justify-content:space-between;color:var(--text);font-weight:1100;font-size:14px;margin-top:2px">
+            <span>Penalty shootout</span>
+            <span>5–4 Aurora</span>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="event"><div class="badge">1</div><div>I arrived three days early. The city was already breathing football.</div></div>
+          <div class="event"><div class="badge">2</div><div>The day before, I saw the trophy “up close” for the first time.</div></div>
+          <div class="event"><div class="badge">3</div><div>On the final day, I watched the match minute by minute — with extra time and penalties.</div></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <main>
+    <div class="container grid">
+      <article class="content" aria-label="Blog post">
+        <div class="toc" aria-label="Table of contents">
+          <h2>ON THE MAP OF THE STORY</h2>
+          <a href="#chegada">Arrival in the host city</a>
+          <a href="#pre">Fans, big screens, and events</a>
+          <a href="#estadio">Stadium visit and the trophy up close</a>
+          <a href="#diad">Final day: from the line to the whistle</a>
+          <a href="#jogo">Minute-by-minute match</a>
+          <a href="#pos">Ceremony and celebrations</a>
+        </div>
+
+        <div class="article">
+          <section id="chegada" class="reveal">
+            <h2>I arrived in the host city: flags, barbecue smoke, and that “almost there” sound</h2>
+            <p>I stepped off the aircraft with the feeling that my heart had been synced to an old radio. You couldn’t yet see the stadium — and still, everything seemed to point in the same direction: <strong>the match had already started inside the city</strong>.</p>
+
+            <div class="figure">
+              <div class="img" role="img" aria-label="Illustrative fictional image"></div>
+              <div class="figcap">The airport walkway felt like a documentary corridor: national colors, banners, and volunteers with badges glowing under the lights.</div>
+            </div>
+
+            <h3>The airport decorated with team flags</h3>
+            <p>At arrivals, team flags — some with tiny travel scuffs, others perfectly new — swayed in metal arches. With every baggage cart pulled by different hands, I also noticed a different language: quick greetings, smiles of “you came too,” spontaneous photos next to a panel with the map of the host country.</p>
+
+            <h3>Fans moving in from many countries</h3>
+            <p>I didn’t sit down. I walked. I realized early that the city wouldn’t just be a stage: it would be a meeting. Fans in their twenties crossing paths with families, and families blending with older people — all sharing the same look of someone who knows they’ll keep this for decades. A group in traditional shirts sang softly to avoid tiring their throats. Another group exchanged event wristbands like “protocol-made friendship.”</p>
+
+            <div class="callout">
+              <div class="head">
+                <div class="title"><span class="spark">✦</span> Box of curiosities</div>
+                <div class="tag">FIFA Live Vibes</div>
+              </div>
+              <div class="body">
+                <p style="margin:0" class="quote">“On arrival, you can feel what’s coming. It’s as if the stadium breathes with you.” <strong>— Lucas, fan from Eastern Europe (fictional interview)</strong></p>
+                <p style="margin:10px 0 0" class="small">Experience statistic: I entered the city with <strong>seven</strong> different hat types along the arrivals corridor.</p>
+              </div>
+            </div>
+
+            <h3>Party energy in the streets</h3>
+            <p>When I finally left the airport, the streets already felt like they had been “painted” with sound. That distant beat — coming from somewhere where someone had set a speaker on top of a drinks cart — mixed with laughter and the noise of crowded tour buses. At every corner, someone raised a flag as if lighting a candle to keep the day bright.</p>
+
+            <h3>Big screens scattered across the city</h3>
+            <p>Big screens weren’t in just one place. There was an invisible strategy: you’d walk by and suddenly see yourself “inevitably” staring. In Central Square, a huge screen showed open training sessions and historical highlights. At crossings, smaller screens displayed preparation match scores and quick interviews. And the whole city — like an organism — repeated the same motion: point your phone, look for the camera, celebrate a detail nobody forgets.</p>
+          </section>
+
+          <section id="pre" class="reveal">
+            <h2>FIFA on the streets: official stores, themed restaurants, interviews, and fan fests</h2>
+            <h3>FIFA official stores</h3>
+            <p>I went to the first official store as soon as I could: a façade with dynamic lighting, window displays with shirts and scarves folded like museum pieces. Staff had been trained to help quickly and with a smile. I bought a commemorative patch and, when I got the bag, I noticed the handle “whispered”: my hand already knew I’d carry that into the stadium.</p>
+
+            <h3>Themed restaurants</h3>
+            <p>At lunchtime, I chose a themed local-cuisine restaurant “with the flavor of a stadium.” The menu felt like a script: portions named after plays (“house half-moon,” “poison pass”), drinks in shirt colors, and desserts served on celebratory trays. The smell of the grill mixed with spices. And, of course, the TV played news segments with the same rhythm as someone waiting for the final whistle.</p>
+
+            <h3>Events for fans before kickoff</h3>
+            <p>Late afternoon, I joined a fan-activity area. There were spaces for photos with trophy models, shooting challenges with live scoring, and a small “fan run” track where the event team itself set the rhythm for chants. The most impressive thing was the sense of togetherness: people weren’t there only to consume; they were there to <strong>belong</strong>.</p>
+
+            <div class="stats" aria-label="Atmosphere statistics (fictional)">
+              <div class="stat">
+                <div class="n">28</div>
+                <div class="l">sales points with lines (approx. count)</div>
+              </div>
+              <div class="stat">
+                <div class="n">14</div>
+                <div class="l">different languages I heard in 45 minutes</div>
+              </div>
+              <div class="stat">
+                <div class="n">1</div>
+                <div class="l">mission: reach the stadium without blinking</div>
+              </div>
+            </div>
+
+            <h3>Stadium visit the day before the match</h3>
+            <p>I returned to the stadium the day before. It wasn’t yet the final day — and still, the atmosphere had the density of what’s coming. Inside areas, banners with messages for fans and teams. Guards and volunteers guided the flow like we were all moving in a shared choreography.</p>
+
+            <h3>The emotion of seeing the World Cup trophy up close</h3>
+            <p>When they placed me in front of the trophy display, I had one of those moments where your mind tries to rationalize: “Is this real?” The trophy was lit with near-surgical precision. Cold metal. Details you only notice in person. And the muffled sound of the surroundings, as if the stadium was holding its breath for the next day.</p>
+
+            <h3>Music around the stadium and fan interviews</h3>
+            <p>Outside, songs rose and fell. It wasn’t one constant volume: it moved like waves, like the stadium itself. I sat for a few minutes on a wide step and heard a song that seemed to begin exactly where the world’s throat had paused. Then I started talking to fans. Every interview was a compact universe: family stories, childhood memories, promises made before the first child was even born.</p>
+
+            <div class="callout">
+              <div class="head">
+                <div class="title"><span class="spark">🎙</span> Quotes that stuck in my head</div>
+                <div class="tag">Interviews</div>
+              </div>
+              <div class="body">
+                <p class="quote">“I saw myself as a kid when the big screen showed the dribbles. I thought: ‘this can’t be only a game.’” <strong>— Samira (fictional fan, South American)</strong></p>
+                <p class="quote" style="margin-top:12px">“The trophy is beautiful in photos, but in person… it feels bigger than the story itself.” <strong>— André (fictional fan, European)</strong></p>
+              </div>
+            </div>
+
+            <h3>Fan fests</h3>
+            <p>At night, fan fests turned into a city inside the city. It was shouting, dancing, face paint, and small local-group performances. I watched children climb onto adults’ shoulders to get the best angle of the stage. I saw flags spin like they had their own motor. And I saw people who, two hours earlier, were strangers — and then became comrades.</p>
+
+            <h3>Opening performances</h3>
+            <p>The event opening the day before was a “full rehearsal of emotion.” Lights in geometric shapes, deep sound making your chest vibrate, and a projected sequence of images that connected youth and football, past and future. When it ended, the crowd didn’t just clap for the show — they clapped because their bodies understood: the big day was coming.</p>
+          </section>
+
+          <section id="estadio" class="reveal">
+            <h2>Final day: from getting there to the stadium and the collective mosaic</h2>
+            <h3>Getting to the stadium</h3>
+            <p>I woke up early, but I didn’t sleep. It felt like your body woke up by itself, warning that tension had turned into electricity. On the way, the city felt more organized — and at the same time wilder with joy. People wore raincoats (because nobody wanted to miss a detail of the rain of emotions), and fans waved long flags that almost scraped the street poles.</p>
+
+            <h3>Entry lines and security</h3>
+            <p>The lines had their own rhythm: not chaos — a process. Security checked documents and bags, and the rules were explained kindly. I felt genuine care — but also the weight of the event. Everything was meticulous: people understood that this kind of final demands respect for the moment.</p>
+
+            <h3>The moment I found my seat</h3>
+            <p>When I finally found my spot, I paused for half a second. Not because I wasn’t paying attention — but because the view was too big. The aisle, the seats, the perfect incline. It felt like I was walking into the “center of the story” and that, for some reason, the story had already recognized me.</p>
+
+            <h3>The panoramic view of a packed stadium</h3>
+            <p>From my perspective, the stadium looked like a living mosaic. Colors shifted like waves. And the noise had texture: there were chants, whistles, and a kind of collective murmur that only exists when millions of people breathe for the same second.</p>
+
+            <h3>Mosaics created by the fans</h3>
+            <p>The mosaic began before the teams walked out. Colored sheets, coordinates like magic: first uncertainty — then the design finding its shape. When the final mosaic was completed, I felt chills rise from my neck to my scalp. It was like watching an image gain a voice.</p>
+
+            <h3>The teams entering the pitch</h3>
+            <p>The teams walked out with that step mixing solemnity and focus. The players looked more human than in any broadcast. I could see the micro-gestures: the way a captain adjusted a glove, or how an athlete breathed deeply before looking up at the stands. The stadium music turned into a personal anthem.</p>
+
+            <h3>The national anthem</h3>
+            <p>When the anthem echoed, people stood up. It wasn’t “fan performance”: it was respect. I sang without remembering every line — but I remember the feeling perfectly. For a few seconds, the stadium became a temple. The ball hadn’t rolled yet — but everything was already match.</p>
+
+            <h3>Fireworks</h3>
+            <p>Fireworks exploded in different places so your eyes wouldn’t get tired. Lights cut through the air above the stadium curves. The sound arrived later, delayed by a second that felt bigger than it should. When the echo ended, everyone was already ready for the first exchanges.</p>
+
+            <h3>The tension before the opening whistle</h3>
+            <p>The referee took position. The stadium’s internal clock began counting. I felt tension like someone holding a stretched rope. Everything slowed down — and at the same time sped up. A chant started far away and came closer.</p>
+          </section>
+
+          <section id="diad" class="reveal">
+            <h2>Minute-by-minute match: great plays, miracle saves, and a heart in a thousand pieces</h2>
+            <p><strong>Fictional score:</strong> Atlântica 2–2 Aurora (90’) • 0–0 after extra time • Aurora wins the penalty shootout 5–4.</p>
+
+            <div class="timeline-match" aria-label="Match timeline">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width:110px">Min</th>
+                    <th style="width:90px">Type</th>
+                    <th>Play</th>
+                    <th style="width:220px">Crowd reaction</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>03’</td>
+                    <td><span class="tag">Kickoff</span></td>
+                    <td>First touch into depth. Atlântica’s defense closes the line, but the opening pressure is high.</td>
+                    <td>Endless back-and-forth of shouts: “This is the decision!”</td>
+                  </tr>
+                  <tr>
+                    <td>11’</td>
+                    <td><span class="tag save">Save</span></td>
+                    <td>A shot from outside the box with spin. Aurora’s goalkeeper spreads with fingertips.</td>
+                    <td>Whole stadium reacts before the ball even hits the ground.</td>
+                  </tr>
+                  <tr>
+                    <td>18’</td>
+                    <td><span class="tag">Card</span></td>
+                    <td>Yellow for the fullback for tactical foul — the rhythm becomes tougher.</td>
+                    <td>Jeers and short boos, like a warning.</td>
+                  </tr>
+                  <tr>
+                    <td>26’</td>
+                    <td><span class="tag">Move</span></td>
+                    <td>Atlântica swaps in a triangle: pass behind the marking, low cross… the defense clears just on the line.</td>
+                    <td>Sudden silence — then explosion.</td>
+                  </tr>
+                  <tr>
+                    <td>34’</td>
+                    <td><span class="tag goal goal">Goal</span></td>
+                    <td><strong>GOAL!</strong> Aurora scores on the rebound after a header. The ball finds the net with a dry touch.</td>
+                    <td>Fans on their feet: flags shake like waves.</td>
+                  </tr>
+                  <tr>
+                    <td>41’</td>
+                    <td><span class="tag save">Save</span></td>
+                    <td>Atlântica almost equalizes: a header into the corner. Aurora’s goalkeeper makes the save with full extension.</td>
+                    <td>“Uhh!” Collective, long — it travels across the stadium.</td>
+                  </tr>
+                  <tr>
+                    <td>45’+2</td>
+                    <td><span class="tag">Card</span></td>
+                    <td>Yellow for a midfielder for stopping a counterattack.</td>
+                    <td>Contained protests: hand to face, breath held.</td>
+                  </tr>
+                  <tr>
+                    <td>49’</td>
+                    <td><span class="tag">Restart</span></td>
+                    <td>Atlântica returns to attack. Pushing down the left, forcing repeated attempts.</td>
+                    <td>Rhythmic shouts like a drum in the chest.</td>
+                  </tr>
+                  <tr>
+                    <td>57’</td>
+                    <td><span class="tag save">Save</span></td>
+                    <td>Low shot at the entrance of the box. Atlântica’s goalkeeper defends with his leg — redirecting to a corner.</td>
+                    <td>The crowd jumps and comes back, as if pushed.</td>
+                  </tr>
+                  <tr>
+                    <td>63’</td>
+                    <td><span class="tag card">Card</span></td>
+                    <td>Second yellow turns into red for Atlântica for a strong foul. The stadium changes emotionally.</td>
+                    <td>A mix of shock and anger — and then strategic despair.</td>
+                  </tr>
+                  <tr>
+                    <td>68’</td>
+                    <td><span class="tag goal">Goal</span></td>
+                    <td><strong>GOAL!</strong> Even with one less, Aurora extends: a measured free kick, a header into the corner.</td>
+                    <td>The away section’s celebration almost “swallows” the sound from the rest of the stadium.</td>
+                  </tr>
+                  <tr>
+                    <td>74’</td>
+                    <td><span class="tag">Substitution</span></td>
+                    <td>Atlântica changes the pattern: more speed and short aerial balls.</td>
+                    <td>Fans sing again with more breath.</td>
+                  </tr>
+                  <tr>
+                    <td>81’</td>
+                    <td><span class="tag card">Card</span></td>
+                    <td>Yellow for heated complaints near the bench. Tension becomes a spark.</td>
+                    <td>Throats tighten: “Don’t do that now!”</td>
+                  </tr>
+                  <tr>
+                    <td>88’</td>
+                    <td><span class="tag goal">Goal</span></td>
+                    <td><strong>GOAL!</strong> Atlântica cuts it down: practiced set piece, short play, placed shot. The whole stadium rises.</td>
+                    <td>The stadium turns into a roar. Suddenly, nobody remembers to breathe.</td>
+                  </tr>
+                  <tr>
+                    <td>90’+3</td>
+                    <td><span class="tag goal">Goal</span></td>
+                    <td><strong>GOAL!</strong> Equalizer. Recovery in midfield, a fast restart, and a finish into the bottom corner.</td>
+                    <td>Explosion and shock: joy, tears, and disbelief.</td>
+                  </tr>
+                  <tr>
+                    <td>94’</td>
+                    <td><span class="tag save">Save</span></td>
+                    <td>End of normal time: in the first chance of extra time, the goalkeeper clears under the bar.</td>
+                    <td>Respectful silence — like the stands are watching in slow motion.</td>
+                  </tr>
+                  <tr>
+                    <td>106’</td>
+                    <td><span class="tag">Move</span></td>
+                    <td>Atlântica tries to control. Aurora counterattacks with two quick touches, but the defensive line closes.</td>
+                    <td>Chants oscillate between hope and fear.</td>
+                  </tr>
+                  <tr>
+                    <td>112’</td>
+                    <td><span class="tag save">Save</span></td>
+                    <td>Header shot. Deflection clears danger over the crossbar.</td>
+                    <td>A collective sigh that feels like a prayer.</td>
+                  </tr>
+                  <tr>
+                    <td>120’</td>
+                    <td><span class="tag">Whistle</span></td>
+                    <td>Extra time ends 0–0. The stadium prepares for the penalty lottery.</td>
+                    <td>Flags shake faster. Hands tremble on phones.</td>
+                  </tr>
+                  <tr>
+                    <td>1st</td>
+                    <td><span class="tag pen">Penalties</span></td>
+                    <td>Penalty 1: Aurora scores. The goalkeeper misses by reflex, not by reading.</td>
+                    <td>The away crowd becomes a wall of sound.</td>
+                  </tr>
+                  <tr>
+                    <td>2nd</td>
+                    <td><span class="tag pen">Penalties</span></td>
+                    <td>Penalty 2: Atlântica scores, but the keeper sends a warning with his stance.</td>
+                    <td>The stadium seems to hold its tongue.</td>
+                  </tr>
+                  <tr>
+                    <td>3rd</td>
+                    <td><span class="tag save">Save</span></td>
+                    <td>Penalty 3: Atlântica’s goalkeeper makes the save! Tension turns into a wave.</td>
+                    <td>A shout tears through the stadium roof.</td>
+                  </tr>
+                  <tr>
+                    <td>4th</td>
+                    <td><span class="tag pen">Penalties</span></td>
+                    <td>Penalty 4: Aurora scores with power and precision.</td>
+                    <td>You see tears before you understand why.</td>
+                  </tr>
+                  <tr>
+                    <td>5th</td>
+                    <td><span class="tag pen">Penalties</span></td>
+                    <td>Atlântica takes the fifth and sends it wide via a deflection. The stadium vibrates in shock.</td>
+                    <td>A pause so long it felt like “time error.”</td>
+                  </tr>
+                  <tr>
+                    <td>6th</td>
+                    <td><span class="tag goal pen">Penalties</span></td>
+                    <td>Aurora takes. The goalkeeper tries to guess. The ball goes in: 5–4.</td>
+                    <td>Total explosion. Not just celebration — it’s liberation.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="callout">
+              <div class="head">
+                <div class="title"><span class="spark">⚡</span> What I felt in the hardest moment</div>
+                <div class="tag">Story</div>
+              </div>
+              <div class="body">
+                <p class="quote">When the equalizer came at 90’+3, I didn’t shout right away. I listened to my own body. It was as if I had waited years for that second, and when it happened… the voice came out on its own. <strong>— my notebook still smells like ink from emotion</strong></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="pos" class="reveal">
+            <h2>After the final whistle: awards, confetti, and the city turning into an unlimited celebration</h2>
+            <h3>Awards ceremony</h3>
+            <p>The silence didn’t last long — and not because there was no emotion. It was because everyone needed a second to understand the match had ended and yet the story would continue. The medal presentation and protocol somehow felt smaller than the explosion from the stands.</p>
+
+            <h3>The players lifting the trophy</h3>
+            <p>When the captain — the same one who, hours earlier, seemed to weigh on his shoulder as if he already knew the future — lifted the trophy, the whole stadium turned into a single human being. The trophy reflected the lights like it was turning them on from the inside. I saw tears beyond my field of view and heard people say someone’s name who wasn’t there anymore: grandparents, brothers, friends who had watched on TV.</p>
+
+            <h3>Confetti rain and fireworks</h3>
+            <p>Confetti fell like a white storm. Each piece felt like a reminder: “you were here.” Then the fireworks took over the sky again. The sound wasn’t just celebration this time — it was confirmation. As if the world said “it’s real.”</p>
+
+            <h3>Celebrations in the streets</h3>
+            <p>Without rushing to go home, the city joined the stadium. I walked the streets with people singing and hugging strangers. At times, it was possible to see improvised dances beside cars passing slowly, like caravans of joy. On building fronts, people hung flags and improvised clotheslines with scarves.</p>
+
+            <h3>Back to the hotel</h3>
+            <p>On the ride back, the noise dropped — but the emotions didn’t. It seemed everyone needed quiet to process. When I arrived at the hotel, I didn’t shower right away. I sat down. I opened my notebook. I wrote only one line: “Today football found a piece of eternity inside me.”</p>
+
+            <h3>The feeling of living one of the biggest sports events on the planet</h3>
+            <p>If someone asked me to explain what a World Cup final is, I’d say it’s sport. But it’s also emotional geography. It’s proof that people can come together without asking permission for it to happen.</p>
+
+            <div class="callout">
+              <div class="head">
+                <div class="title"><span class="spark">🏆</span> Final highlight</div>
+                <div class="tag">Summary</div>
+              </div>
+              <div class="body">
+                <p style="margin:0" class="quote">The match was a romance in short chapters: tension, hope, collapse, a restart — and in the end… the sky making room for victory. <strong>— from my live point of view</strong></p>
+              </div>
+            </div>
+
+            <div class="figure">
+              <div class="img" style="background:
+                radial-gradient(420px 240px at 25% 30%, rgba(255,77,109,.26), transparent 60%),
+                radial-gradient(460px 260px at 80% 20%, rgba(24,163,255,.30), transparent 58%),
+                linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));" role="img" aria-label="Illustrative fictional image"></div>
+              <div class="figcap">Confetti and fireworks: the stadium looked like a photograph that finally decided to move.</div>
+            </div>
+          </section>
+
+          <section class="reveal" style="margin-top:12px;">
+            <h2>Photo gallery (illustrative)</h2>
+            <div class="stats" style="grid-template-columns: repeat(3, 1fr);">
+              <div class="stat">
+                <div class="n" style="font-size:18px">📷 Arrival at the airport</div>
+                <div class="l">Arches with flags and smiling volunteers.</div>
+              </div>
+              <div class="stat">
+                <div class="n" style="font-size:18px">🎶 Music around</div>
+                <div class="l">Sound waves before kickoff.</div>
+              </div>
+              <div class="stat">
+                <div class="n" style="font-size:18px">🧩 Fan mosaic</div>
+                <div class="l">Coordinated like a living map.</div>
+              </div>
+            </div>
+            <div class="callout">
+              <div class="head">
+                <div class="title"><span class="spark">🖼️</span> Gallery</div>
+                <div class="tag">Fictional</div>
+              </div>
+              <div class="body">
+                <p class="small" style="margin:0">This layout already includes “image spaces.” Replace the text/gradients with real photos whenever you want.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <aside class="sidebar" aria-label="Sidebar">
+        <div class="widget">
+          <h3>Comment box</h3>
+          <div class="small">Use it to comment on the story (demo without a backend).</div>
+          <div class="comment-box" style="margin-top:12px">
+            <input id="name" type="text" placeholder="Your name" style="border-radius:14px; padding:12px; width:100%; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color:var(--text); font-weight:800; outline:none" />
+            <textarea id="comment" placeholder="Write your experience, your team, or your favorite moment..."></textarea>
+            <button class="btn" id="send">Publish comment</button>
+            <button class="btn secondary" id="clear">Clear</button>
+          </div>
+
+          <div class="comments" id="comments">
+            <div class="c">
+              <div class="top"><div class="who">Marina</div><div class="when">now</div></div>
+              <div class="txt">The way you described the trophy made me want to be there. You can almost hear the stadium.</div>
+            </div>
+            <div class="c">
+              <div class="top"><div class="who">Rafael</div><div class="when">now</div></div>
+              <div class="txt">The timeline is perfect. I almost heard the stadium…</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h3>Match statistics</h3>
+          <div class="small">(illustrative values for the demo)</div>
+          <div class="stats" style="grid-template-columns: 1fr; margin-top:12px">
+            <div class="stat"><div class="n">12</div><div class="l">shots on target (Atlântica + Aurora)</div></div>
+            <div class="stat"><div class="n">4</div><div class="l">difficult goalkeeper saves</div></div>
+            <div class="stat"><div class="n">6</div><div class="l">total cards</div></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> • Final Diary — demonstrative layout (fictional content)</div>
+  </footer>
+
+  <script>
+    const reveal = () => {
+      const els = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries)=>{
+        for(const e of entries){
+          if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target)}
+        }
+      }, {threshold: .12});
+      els.forEach(el=>io.observe(el));
+    };
+    reveal();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple client-side search highlight
+    const q = document.getElementById('q');
+    const article = document.querySelector('.article');
+    let last = null;
+
+    function clearHighlights(){
+      const marks = article.querySelectorAll('mark.bbhl');
+      marks.forEach(m=>{
+        const parent = m.parentNode;
+        parent.replaceChild(document.createTextNode(m.textContent), m);
+        parent.normalize();
+      });
+    }
+
+    q.addEventListener('input', () => {
+      const val = q.value.trim().toLowerCase();
+      clearHighlights();
+      if(!val) return;
+      const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT);
+      const texts = [];
+      while(walker.nextNode()) texts.push(walker.currentNode);
+      for(const node of texts){
+        const t = node.nodeValue;
+        const idx = t.toLowerCase().indexOf(val);
+        if(idx !== -1){
+          const span = document.createElement('mark');
+          span.className = 'bbhl';
+          // Replace only first match in that node
+          const after = t.slice(idx + val.length);
+          const before = t.slice(0, idx);
+          span.textContent = t.slice(idx, idx+val.length);
+          const frag = document.createDocumentFragment();
+          frag.appendChild(document.createTextNode(before));
+          frag.appendChild(span);
+          frag.appendChild(document.createTextNode(after));
+          node.parentNode.replaceChild(frag, node);
+          break;
+        }
+      }
+
+      const style = document.createElement('style');
+      style.textContent = `.bbhl{background: rgba(24,163,255,.22); color: var(--text); padding:0 3px; border-radius:6px; border:1px solid rgba(24,163,255,.35);}`;
+      document.head.appendChild(style);
+    });
+
+    // Comments demo
+    const send = document.getElementById('send');
+    const clear = document.getElementById('clear');
+    const name = document.getElementById('name');
+    const comment = document.getElementById('comment');
+    const comments = document.getElementById('comments');
+
+    clear.addEventListener('click', () => {
+      name.value = '';
+      comment.value = '';
+    });
+
+    send.addEventListener('click', () => {
+      const who = name.value.trim() || 'Anonymous';
+      const txt = comment.value.trim();
+      if(!txt){
+        comment.focus();
+        return;
+      }
+      const c = document.createElement('div');
+      c.className = 'c reveal';
+      c.innerHTML = `
+        <div class="top">
+          <div class="who"></div>
+          <div class="when">now</div>
+        </div>
+        <div class="txt"></div>
+      `;
+      c.querySelector('.who').textContent = who;
+      c.querySelector('.txt').textContent = txt;
+      comments.prepend(c);
+      comment.value = '';
+      name.value = '';
+      c.classList.add('in');
+    });
+  </script>
+</body>
+</html>
+
